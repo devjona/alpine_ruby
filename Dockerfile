@@ -12,7 +12,11 @@ RUN apk add ruby=3.3.3-r0 && \
 
 WORKDIR /app
 
-COPY Gemfile .
+# We might remove this if we're using this image with Rails projects mounted into it.
+# COPY Gemfile .
 
-RUN bundle install
+# We could avoid this too, for the same reasons above. Each Ruby or Rails project would have its own Gemfile.
+# RUN bundle install
+
+# Then again, we probabl have no need to have our own "Alpine Linux Ruby" image if we can use an official one.
 
