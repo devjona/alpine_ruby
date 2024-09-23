@@ -6,13 +6,9 @@ FROM alpine:3.20
 # Install Ruby and necessary dependencies:
 # irb wouldn't run because rdoc was missing
 
-RUN apk add ruby=3.3.3-r0 && \
+RUN apk add --clean ruby=3.3.3-r0 \
+  vim && \
   gem install rdoc && \
   gem install bundler
 
 WORKDIR /app
-
-COPY Gemfile .
-
-RUN bundle install
-
