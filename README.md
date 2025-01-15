@@ -5,14 +5,19 @@
 1. Practice using Docker (or Containerization, in general) through the incremental evolution of this Environment.
 2. Test and experiment with the Ruby language and features within this container that can easily be setup anywhere
 
+## DockerHub
+
+This has been [published to DockerHub](https://hub.docker.com/repository/docker/ballenacuadrada). Look for repos that have "alpine" in the name as there are several versions; the key is the `-multiplatform` version that can be used on either ARM or x86. 
+
 ## Usage:
 
 1. [Install Docker](https://docs.docker.com/engine/install/) (if haven't already)
 1. Clone this repo
 1. `cd` into this repo directory
-1. Build the image `docker build . -t alp_v3_20-ruby_3_3_3:v1`. You can tag it however you'd like. An explanation of this command:
-   1. `docker build .` - The `.` means from "here", meaning, from our current directory (assuming you `cd` into this repo and are using its `Dockerfile`)
-   1. `-t <name:tag>`
+1. Build the image. Please note that versions of Alpine or Ruby will change with time and the following is just an example of how I've named these in the past: `docker build . -t alp_v3_20-ruby_3_3_3:v1`. You can tag it however you'd like.
+   - An explanation of this command:
+     1. `docker build .` - The `.` means from "here", meaning, from our current directory (assuming you `cd` into this repo and are using its `Dockerfile`)
+     1. `-t <name:tag>`
 1. You can then run it interactively `docker run -it alp_v3_20-ruby_3_3_3:v1`; it'll start, launch a shell, and you'll be _inside_ the container, able to execute Ruby commands.
 
 ### No Gemfile?
@@ -35,10 +40,6 @@ cd ~/<user>/some/dir
 # the "-v .:/app" basically means, mount the files of our current location to the /app directory in the container using the image of <name:tag>
 docker run -it -v .:/app alp_v3_20-ruby_3_3_3:v1
 ```
-
-## DockerHub
-
-This has been [published to DockerHub](https://hub.docker.com/repository/docker/ballenacuadrada/alpine3_20/general). There are several versions, but the key one is the `-multiplatform` version that can be used on either ARM or x86.
 
 I don't know how much I'll add to or modify these, however, the details in this README serve as notes for future Docker work
 
