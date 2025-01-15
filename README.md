@@ -7,7 +7,7 @@
 
 ## DockerHub
 
-This has been [published to DockerHub](https://hub.docker.com/repository/docker/ballenacuadrada). Look for repos that have "alpine" in the name as there are several versions; the key is the `-multiplatform` version that can be used on either ARM or x86. 
+This has been [published to DockerHub](https://hub.docker.com/repositories/ballenacuadrada). Look for repos that have "alpine" in the name as there are several versions; the key is the `-multiplatform` version that can be used on either ARM or x86. 
 
 ## Usage:
 
